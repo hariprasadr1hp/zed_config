@@ -1,0 +1,229 @@
+{
+  // ####################################################
+  // SECURITY/PRIVACY ###################################
+  // ####################################################
+  "assistant": {
+    "button": true,
+    "default_height": 640,
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "default_width": 320,
+    "dock": "right",
+    "enabled": true,
+    "version": "2"
+  },
+  "auto_install_extensions": {
+    "html": true
+  },
+  "features": {
+    "inline_completion_provider": "none"
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434"
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  // ####################################################
+  // GUI ################################################
+  // ####################################################
+  "buffer_font_size": 16,
+  "base_keymap": "VSCode",
+  "buffer_font_family": "Zed Plex Mono",
+  "centered_layout": {
+    "left_padding": 0.15,
+    "right_padding": 0.15
+  },
+  "chat_panel": {
+    "button": false,
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "button": false,
+    "dock": "left"
+  },
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"]
+  },
+  "format_on_save": "prettier",
+  "inlay_hints": {
+    "enabled": true
+  },
+  "notification_panel": {
+    "dock": "left"
+  },
+  "preferred_line_length": 72,
+  "project_panel": {
+    "button": true,
+    "default_width": 240,
+    "dock": "left",
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "indent_size": 20,
+    "auto_reveal_entries": true,
+    "auto_fold_dirs": true,
+    "scrollbar": {
+      "show": "always"
+    }
+  },
+  "outline_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "show_whitespaces": "all",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "scrollbar": {
+    "show": "auto"
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "ui_font_size": 16,
+  // ####################################################
+  // TERMINAL ###########################################
+  // ####################################################
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "off",
+    "button": true,
+    "copy_on_select": false,
+    "dock": "bottom",
+    "env": {
+      "ZED": "1"
+    },
+    "font_family": "Hack Nerd Font Mono",
+    "font_features": {
+      "calt": false
+    },
+    "font_size": 16,
+    "indent_guides": {
+      "enabled": true,
+      "coloring": "indent_aware"
+    },
+    "line_height": "comfortable",
+    "option_as_meta": true,
+    "shell": {
+      "program": "/opt/local/bin/bash"
+    },
+    "toolbar": {
+      "title": true
+    },
+    "working_directory": "current_project_directory"
+  },
+  // ####################################################
+  // VIM ################################################
+  // ####################################################
+  "cursor_blink": false,
+  "relative_line_numbers": true,
+  "vim_mode": true,
+  "vim": {
+    "custom_digraphs": {
+      "fz": "🧟‍♀️"
+    },
+    "toggle_relative_line_numbers": true,
+    "use_system_clipboard": "always",
+    "use_multiline_find": true,
+    "use_smartcase_find": true
+  },
+  // ####################################################
+  // GIT ################################################
+  // ####################################################
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  // ####################################################
+  // LANGUAGES ##########################################
+  // ####################################################
+  "languages": {
+    "C": {
+      "tab_size": 4
+    },
+    "C++": {
+      "tab_size": 4
+    },
+    "JSON": {
+      "tab_size": 2
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      },
+      "tab_size": 2
+    },
+    "Python": {
+      "formatter": "language_server",
+      "language_servers": ["pyright", "python-refactoring"],
+      "tab_size": 4
+    },
+    "Rust": {
+      "tab_size": 4
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "tab_size": 2
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "tab_size": 2
+    }
+  },
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "codeActionOnSave": {
+          "rules": ["import/order"]
+        }
+      }
+    },
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "strict"
+        },
+        "python": {
+          "pythonPath": "~/.pyenv/shims/python"
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "ngClass", "styles"]
+      }
+    }
+  },
+  // ####################################################
+  // MISC ###############################################
+  // ####################################################
+  "calls": {
+    "mute_on_join": true,
+    "share_on_join": false
+  },
+  "journal": {
+    "path": "~/.config/zed",
+    "hour_format": "hour24"
+  }
+}
