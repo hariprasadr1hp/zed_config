@@ -154,7 +154,39 @@
     "C++": {
       "tab_size": 4
     },
+    "CSS": {
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "tab_size": 2
+    },
     "JSON": {
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "tab_size": 2
+    },
+    "JSONC": {
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "tab_size": 2
+    },
+    "JSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
       "tab_size": 2
     },
     "JavaScript": {
@@ -165,6 +197,9 @@
         "external": {
           "command": "prettier",
           "arguments": ["--stdin-filepath", "{buffer_path}"]
+        },
+        "language_server": {
+          "name": "biome"
         }
       },
       "tab_size": 2
@@ -192,9 +227,22 @@
     "Rust": {
       "tab_size": 4
     },
+    "Svelte": {
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "tab_size": 2
+    },
     "TypeScript": {
       "code_actions_on_format": {
         "source.organizeImports": true
+      },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
       },
       "tab_size": 2
     },
@@ -202,10 +250,29 @@
       "code_actions_on_format": {
         "source.organizeImports": true
       },
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "tab_size": 2
+    },
+    "Vue.js": {
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
       "tab_size": 2
     }
   },
   "lsp": {
+    "biome": {
+      "settings": {
+        "config_path": "config/biome.json",
+        "require_config_file": true
+      }
+    },
     "eslint": {
       "settings": {
         "codeActionOnSave": {
