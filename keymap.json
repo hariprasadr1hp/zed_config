@@ -7,13 +7,19 @@
       "space ,": "file_finder::Toggle",
       "space 9": ["workspace::SendKeystrokes", "$"],
       "space 0": ["workspace::SendKeystrokes", "^"],
+      "space b k": "pane::CloseActiveItem",
+      "space b K": "workspace::CloseAllItemsAndPanes",
       "space b n": "workspace::NewCenterTerminal",
       "space b N": "workspace::NewFile",
+      "space b O": "workspace::CloseInactiveTabsAndPanes",
       "space f p": "zed::OpenSettings",
+      "space f r": "zed::OpenZedRepo",
       "space f w": "zed::OpenKeymap",
       "space f s": "workspace::Save",
       "space f z": "workspace::ToggleCenteredLayout",
       "space h t": "theme_selector::Toggle",
+      "space l r": "editor::Rename",
+      "space m l o": "editor::OpenUrl",
       "space o c": "chat_panel::ToggleFocus",
       "space o C": "collab_panel::ToggleFocus",
       "space o e": "project_panel::ToggleFocus",
@@ -23,6 +29,7 @@
       "space t b": "editor::ToggleGitBlameInline",
       "space t B": "editor::ToggleGitBlame",
       "space t h": "editor::ToggleHunkDiff",
+      "space t p": "debug::OpenSyntaxTreeView",
       "space t z": "workspace::ToggleCenteredLayout",
       "space w c": "pane::CloseAllItems",
       "space w v": "pane::SplitVertical",
@@ -75,6 +82,28 @@
       "ctrl-9": ["workspace::ActivatePane", 8],
       "ctrl-`": "workspace::ToggleBottomDock",
       "ctrl-. ctrl-.": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space o e": "project_panel::ToggleFocus",
+      "escape": "project_panel::ToggleFocus",
+      "enter": "project_panel::Open",
+      ":": "command_palette::Toggle",
+      "-": "project_panel::SelectParent",
+      "%": "project_panel::NewFile",
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "d": "project_panel::Delete",
+      "h": "project_panel::CollapseSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrev",
+      "l": "project_panel::ExpandSelectedEntry",
+      "p": "project_panel::Paste",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "y": "project_panel::Copy"
     }
   }
 ]
