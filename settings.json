@@ -55,6 +55,11 @@
   "inlay_hints": {
     "enabled": true
   },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+    "background_coloring": "indent_aware"
+  },
   "notification_panel": {
     "button": false,
     "dock": "left"
@@ -110,10 +115,6 @@
       "calt": false
     },
     "font_size": 16,
-    "indent_guides": {
-      "enabled": true,
-      "coloring": "indent_aware"
-    },
     "line_height": "comfortable",
     "option_as_meta": true,
     "shell": {

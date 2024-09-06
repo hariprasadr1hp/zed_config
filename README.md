@@ -6,4 +6,3 @@
 
 ### References
 - [Zed Prompts](https://github.com/zed-industries/zed/tree/main/assets/prompts)
-
