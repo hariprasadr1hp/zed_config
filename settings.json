@@ -3,6 +3,7 @@
   // SECURITY/PRIVACY ###################################
   // ####################################################
   "assistant": {
+    "button": false,
     "default_height": 640,
     "default_model": {
       "provider": "ollama",
@@ -55,6 +56,7 @@
     "enabled": true
   },
   "notification_panel": {
+    "button": false,
     "dock": "left"
   },
   "preferred_line_length": 72,
@@ -226,7 +228,8 @@
       "tab_size": 4
     },
     "Rust": {
-      "tab_size": 4
+      "tab_size": 4,
+      "language_servers": ["rust.analyzer"]
     },
     "Svelte": {
       "formatter": {
@@ -244,6 +247,9 @@
         "language_server": {
           "name": "biome"
         }
+      },
+      "prettier": {
+        "allowed": false
       },
       "tab_size": 2
     },
@@ -267,11 +273,20 @@
       "tab_size": 2
     }
   },
+  // ####################################################
+  // LSP ################################################
+  // ####################################################
   "lsp": {
     "biome": {
       "settings": {
         "config_path": "config/biome.json",
         "require_config_file": true
+      }
+    },
+    "clangd": {
+      "binary": {
+        "path": "/usr/bin/clangd",
+        "args": []
       }
     },
     "eslint": {
@@ -291,10 +306,87 @@
         }
       }
     },
+    "rust.analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true
+        }
+      },
+      "binary": {
+        "path": "/Users/example/bin/rust-analyzer",
+        "args": [],
+        "path_lookup": true
+      },
+      "cargo": {
+        "allTargets": false
+      },
+      "check": {
+        "workspace": true // use `-p` instead of `--workspace` for cargo check
+      },
+      "checkOnSave": true, // `false` to disable checking entirely
+      "diagnostics": {
+        "experimental": {
+          "enable": true
+        }
+      }
+    },
+    "svelte-language-server": {
+      "initialization_options": {
+        "configuration": {
+          "typescript": {},
+          "javascript": {}
+        }
+      }
+    },
     "tailwindcss-language-server": {
       "settings": {
         "classAttributes": ["class", "className", "ngClass", "styles"]
       }
+    },
+    "terraform-ls": {
+      "initialization_options": {
+        "experimentalFeatures": {
+          "prefillRequiredFields": true
+        }
+      }
+    },
+    "vtsls": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": "all",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": true,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayEnumMemberValueHints": true
+        },
+        "typescript": {
+          "tsserver": {
+            "maxTsServerMemory": 16184
+          }
+        },
+        "javascript": {
+          "tsserver": {
+            "maxTsServerMemory": 16184
+          }
+        }
+      }
+    },
+    "yaml": {
+      "completion": true,
+      "format": {
+        "enable": true,
+        "singleQuote": false,
+        "bracketSpacing": true
+      },
+      "hover": "enable",
+      "schemaStore": {
+        "enable": true,
+        "url": "https://www.schemastore.org/api/json/catalog.json"
+      },
+      "validate": true
     }
   },
   // ####################################################
