@@ -3,14 +3,13 @@
   // SECURITY/PRIVACY ###################################
   // ####################################################
   "assistant": {
-    "button": true,
     "default_height": 640,
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-4o-mini"
+      "provider": "ollama",
+      "model": "llama3.1:latest"
     },
     "default_width": 320,
-    "dock": "right",
+    "dock": "left",
     "enabled": true,
     "version": "2"
   },
@@ -60,7 +59,7 @@
   },
   "preferred_line_length": 72,
   "project_panel": {
-    "button": true,
+    "button": false,
     "default_width": 240,
     "dock": "left",
     "file_icons": true,
@@ -77,6 +76,8 @@
     "button": false,
     "dock": "right"
   },
+  "show_completions_on_input": true,
+  "show_inline_completions": true,
   "show_whitespaces": "all",
   "theme": {
     "mode": "dark",
@@ -96,7 +97,7 @@
   "terminal": {
     "alternate_scroll": "off",
     "blinking": "off",
-    "button": true,
+    "button": false,
     "copy_on_select": false,
     "dock": "bottom",
     "env": {

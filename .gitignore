@@ -1,5 +1,4 @@
 conversations
 embeddings
-prompts
-
-tasks.json
+prompts/*.mdb
+prompts/templates

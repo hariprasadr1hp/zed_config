@@ -23,8 +23,10 @@
       "space o c": "chat_panel::ToggleFocus",
       "space o C": "collab_panel::ToggleFocus",
       "space o e": "project_panel::ToggleFocus",
+      "space o l": "project_panel::ToggleFocus",
       "space o n": "notification_panel::ToggleFocus",
       "space o o": "outline::Toggle",
+      "space o t": "terminal_panel::ToggleFocus",
       "space t n": "editor::ToggleLineNumbers",
       "space t b": "editor::ToggleGitBlameInline",
       "space t B": "editor::ToggleGitBlame",
@@ -104,6 +106,31 @@
       "r": "project_panel::Rename",
       "x": "project_panel::Cut",
       "y": "project_panel::Copy"
+    }
+  },
+  {
+    "context": "AssistantPanel && !menu",
+    "bindings": {
+      "space c": "assistant::ShowConfiguration",
+      "space h": "assistant::DeployHistory",
+      "] r": "assistant::CycleMessageRole",
+      "[ r": "assistant::CycleMessageRole",
+      "] u": "assistant::CycleMessageRole",
+      "[ u": "assistant::CycleMessageRole",
+      "space t m": "assistant::ToggleModelSelector",
+      "space o a": "assistant::ToggleFocus"
+    }
+  },
+  {
+    "context": "ChatPanel && !menu",
+    "bindings": {
+      "space o c": "chat_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal && !menu",
+    "bindings": {
+      "space o t": "terminal_panel::ToggleFocus"
     }
   }
 ]
