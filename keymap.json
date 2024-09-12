@@ -5,8 +5,14 @@
       "space /": "editor::ToggleComments",
       "space .": "project_panel::ToggleFocus",
       "space ,": "file_finder::Toggle",
-      "space 9": ["workspace::SendKeystrokes", "$"],
-      "space 0": ["workspace::SendKeystrokes", "^"],
+      "space 9": [
+        "workspace::SendKeystrokes",
+        "$"
+      ],
+      "space 0": [
+        "workspace::SendKeystrokes",
+        "^"
+      ],
       "space a c c": "editor::Copy",
       "space a v v": "editor::Paste",
       "space a x x": "editor::Cut",
@@ -18,9 +24,11 @@
       "space c c": "task::Spawn",
       "space c p": "editor::CopyPath",
       "space c P": "editor::CopyRelativePath",
+      "space f d": "diagnostics::Deploy",
       "space f l": "zed::OpenLog",
+      "space f L": "zed::OpenLocalSettings",
       "space f p": "zed::OpenSettings",
-      "space f P": "zed::OpenLocalSettings",
+      "space f P": "zed::OpenSettings",
       "space f r": "zed::OpenZedRepo",
       "space f t": "zed::OpenTasks",
       "space f T": "zed::OpenLocalTasks",
@@ -31,29 +39,61 @@
       "space i e": "editor::ShowCharacterPalette",
       "space l r": "editor::Rename",
       "space m l o": "editor::OpenUrl",
-      "space m c": ["task::Spawn", { "task_name": "make clean" }],
-      "space m m": ["task::Spawn", { "task_name": "make" }],
-      "space m t": ["task::Spawn", { "task_name": "make test" }],
-      "space m M": ["workspace::SendKeystrokes", "space o t space ls enter"],
+      "space m c": [
+        "task::Spawn",
+        {
+          "task_name": "make clean"
+        }
+      ],
+      "space m m": [
+        "task::Spawn",
+        {
+          "task_name": "make"
+        }
+      ],
+      "space m t": [
+        "task::Spawn",
+        {
+          "task_name": "make test"
+        }
+      ],
       "space o a": "assistant::ToggleFocus",
       "space o c": "chat_panel::ToggleFocus",
       "space o C": "collab_panel::ToggleFocus",
-      "space o d": "diagnostics::Deploy",
       "space o e": "project_panel::ToggleFocus",
-      "space o l": "project_panel::ToggleFocus",
+      "space o h": "editor::ToggleTabBar",
+      "space o l": [
+        "workspace::SendKeystrokes",
+        "space o t space lazygit enter"
+      ],
       "space o n": "notification_panel::ToggleFocus",
       "space o o": "outline::Toggle",
+      "space o r": [
+        "workspace::SendKeystrokes",
+        "space o t space ranger enter"
+      ],
       "space o t": "terminal_panel::ToggleFocus",
       "space o x": "zed::Extensions",
+      "space p d": "diagnostics::Deploy",
+      "space q q": "zed::Quit",
+      "space q r": "workspace::Reload",
       "space t n": "editor::ToggleLineNumbers",
       "space t b": "editor::ToggleGitBlameInline",
       "space t B": "editor::ToggleGitBlame",
       "space t h": "editor::ToggleHunkDiff",
       "space t p": "debug::OpenSyntaxTreeView",
       "space t z": "workspace::ToggleCenteredLayout",
+      "space v m": "markdown::OpenPreview",
+      "space v M": "markdown::OpenPreviewToTheSide",
       "space w c": "pane::CloseAllItems",
       "space w v": "pane::SplitVertical",
-      "space w w": "workspace::ActivateNextPane"
+      "space w w": "workspace::ActivateNextPane",
+      "space z f": [
+        "task::Spawn",
+        {
+          "task_name": "files lookup"
+        }
+      ]
     }
   },
   {
@@ -80,17 +120,50 @@
     }
   },
   {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "b n": "vim::NormalBefore"
+    }
+  },
+  {
     "context": "Pane",
     "bindings": {
-      "cmd-1": ["pane::ActivateItem", 0],
-      "cmd-2": ["pane::ActivateItem", 1],
-      "cmd-3": ["pane::ActivateItem", 2],
-      "cmd-4": ["pane::ActivateItem", 3],
-      "cmd-5": ["pane::ActivateItem", 4],
-      "cmd-6": ["pane::ActivateItem", 5],
-      "cmd-7": ["pane::ActivateItem", 6],
-      "cmd-8": ["pane::ActivateItem", 7],
-      "cmd-9": ["pane::ActivateItem", 8],
+      "cmd-1": [
+        "pane::ActivateItem",
+        0
+      ],
+      "cmd-2": [
+        "pane::ActivateItem",
+        1
+      ],
+      "cmd-3": [
+        "pane::ActivateItem",
+        2
+      ],
+      "cmd-4": [
+        "pane::ActivateItem",
+        3
+      ],
+      "cmd-5": [
+        "pane::ActivateItem",
+        4
+      ],
+      "cmd-6": [
+        "pane::ActivateItem",
+        5
+      ],
+      "cmd-7": [
+        "pane::ActivateItem",
+        6
+      ],
+      "cmd-8": [
+        "pane::ActivateItem",
+        7
+      ],
+      "cmd-9": [
+        "pane::ActivateItem",
+        8
+      ],
       "cmd-0": "pane::ActivateLastItem",
       "cmd-shift-t": "pane::ReopenClosedItem"
     }
@@ -98,24 +171,55 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-1": ["workspace::ActivatePane", 0],
-      "ctrl-2": ["workspace::ActivatePane", 1],
-      "ctrl-3": ["workspace::ActivatePane", 2],
-      "ctrl-4": ["workspace::ActivatePane", 3],
-      "ctrl-5": ["workspace::ActivatePane", 4],
-      "ctrl-6": ["workspace::ActivatePane", 5],
-      "ctrl-7": ["workspace::ActivatePane", 6],
-      "ctrl-8": ["workspace::ActivatePane", 7],
-      "ctrl-9": ["workspace::ActivatePane", 8],
+      "ctrl-1": [
+        "workspace::ActivatePane",
+        0
+      ],
+      "ctrl-2": [
+        "workspace::ActivatePane",
+        1
+      ],
+      "ctrl-3": [
+        "workspace::ActivatePane",
+        2
+      ],
+      "ctrl-4": [
+        "workspace::ActivatePane",
+        3
+      ],
+      "ctrl-5": [
+        "workspace::ActivatePane",
+        4
+      ],
+      "ctrl-6": [
+        "workspace::ActivatePane",
+        5
+      ],
+      "ctrl-7": [
+        "workspace::ActivatePane",
+        6
+      ],
+      "ctrl-8": [
+        "workspace::ActivatePane",
+        7
+      ],
+      "ctrl-9": [
+        "workspace::ActivatePane",
+        8
+      ],
       "ctrl-`": "workspace::ToggleBottomDock",
-      "ctrl-. ctrl-.": "workspace::ToggleLeftDock"
+      // "ctrl-. ctrl-.": "workspace::ToggleLeftDock"
+      "ctrl-. ctrl-.": "workspace::ToggleRightDock"
     }
   },
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
+      "space o a": "assistant::ToggleFocus",
+      "space o c": "chat_panel::ToggleFocus",
       "space o e": "project_panel::ToggleFocus",
       "space o f": "project_panel::RevealInFileManager",
+      "space o t": "terminal_panel::ToggleFocus",
       "space y p": "project_panel::CopyPath",
       "space y P": "project_panel::CopyRelativePath",
       "escape": "project_panel::ToggleFocus",
@@ -127,39 +231,41 @@
       "a": "project_panel::NewFile",
       "A": "project_panel::NewDirectory",
       "d": "project_panel::Delete",
+      "D": "project_panel::Trash",
+      "g y": "project_panel::CopyPath",
       "h": "project_panel::CollapseSelectedEntry",
       "j": "menu::SelectNext",
       "k": "menu::SelectPrev",
       "l": "project_panel::ExpandSelectedEntry",
       "p": "project_panel::Paste",
+      "P": "project_panel::SelectParent",
       "r": "project_panel::Rename",
+      "W": "project_panel::CollapseAllEntries",
       "x": "project_panel::Cut",
-      "y": "project_panel::Copy"
+      "y": "project_panel::Copy",
+      "Y": "project_panel::CopyRelativePath"
     }
   },
   {
     "context": "AssistantPanel && !menu",
     "bindings": {
-      "space c": "assistant::ShowConfiguration",
-      "space h": "assistant::DeployHistory",
-      "] r": "assistant::CycleMessageRole",
-      "[ r": "assistant::CycleMessageRole",
-      "] u": "assistant::CycleMessageRole",
-      "[ u": "assistant::CycleMessageRole",
-      "space o a": "assistant::ToggleFocus",
-      "space t m": "assistant::ToggleModelSelector"
+      "alt-c": "assistant::ShowConfiguration",
+      "alt-r": "assistant::CycleMessageRole",
+      // "space h": "assistant::DeployHistory",
     }
   },
   {
     "context": "ChatPanel && !menu",
     "bindings": {
-      "space o c": "chat_panel::ToggleFocus"
+      "space o a": "assistant::ToggleFocus",
+      "space o c": "chat_panel::ToggleFocus",
+      "space o t": "terminal_panel::ToggleFocus"
     }
   },
   {
     "context": "Terminal && !menu",
     "bindings": {
-      "space o t": "terminal_panel::ToggleFocus"
+      // "space o t": "terminal_panel::ToggleFocus"
     }
   }
 ]
