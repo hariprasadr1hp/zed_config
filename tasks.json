@@ -32,5 +32,17 @@
     "shell": {
       "program": "/opt/local/bin/bash"
     }
+  },
+  {
+    "label": "files lookup",
+    "command": "fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'",
+    // "command": "fzf --preview 'cat {}'",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "hide": "never",
+    "shell": {
+      "program": "/opt/local/bin/bash"
+    }
   }
 ]
