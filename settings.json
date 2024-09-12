@@ -4,13 +4,11 @@
   // ####################################################
   "assistant": {
     "button": false,
-    "default_height": 640,
     "default_model": {
       "provider": "ollama",
       "model": "llama3.1:latest"
     },
-    "default_width": 320,
-    "dock": "left",
+    "dock": "bottom",
     "enabled": true,
     "version": "2"
   },
@@ -41,34 +39,33 @@
   },
   "chat_panel": {
     "button": false,
-    "dock": "left"
+    "dock": "right"
   },
   "collaboration_panel": {
     "button": false,
-    "dock": "left"
+    "dock": "right"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile", "Dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
   },
-  "format_on_save": "prettier",
+  "format_on_save": "on",
   "inlay_hints": {
     "enabled": true
   },
   "indent_guides": {
     "enabled": true,
-    "coloring": "indent_aware",
-    "background_coloring": "indent_aware"
+    "coloring": "indent_aware"
   },
   "notification_panel": {
     "button": false,
-    "dock": "left"
+    "dock": "right"
   },
   "preferred_line_length": 72,
   "project_panel": {
     "button": false,
-    "default_width": 240,
-    "dock": "left",
+    "default_width": 440,
+    "dock": "right",
     "file_icons": true,
     "folder_icons": true,
     "git_status": true,
@@ -83,13 +80,19 @@
     "button": false,
     "dock": "right"
   },
+  "preview_tabs": {
+    "enabled": false
+  },
+  "prettier": {
+    "allowed": true
+  },
   "show_completions_on_input": true,
   "show_inline_completions": true,
   "show_whitespaces": "all",
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "macOS Classic Dark2"
   },
   "scrollbar": {
     "show": "auto"
@@ -106,6 +109,7 @@
     "blinking": "off",
     "button": false,
     "copy_on_select": false,
+    "detect_venv": "off",
     "dock": "bottom",
     "env": {
       "ZED": "1"
@@ -114,7 +118,7 @@
     "font_features": {
       "calt": false
     },
-    "font_size": 16,
+    "font_size": 14,
     "line_height": "comfortable",
     "option_as_meta": true,
     "shell": {
@@ -145,7 +149,8 @@
   // ####################################################
   "git": {
     "inline_blame": {
-      "enabled": true
+      "enabled": true,
+      "min_column": 60
     }
   },
   // ####################################################
@@ -155,34 +160,44 @@
     "C": {
       "tab_size": 4
     },
+
     "C++": {
       "tab_size": 4
     },
+
+    "CMake": {
+      "tab_size": 4
+    },
+
     "CSS": {
+      "tab_size": 2,
       "formatter": {
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     },
+
     "JSON": {
+      "tab_size": 2,
       "formatter": {
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     },
+
     "JSONC": {
+      "tab_size": 2,
       "formatter": {
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     },
+
     "JSX": {
+      "tab_size": 2,
       "code_actions_on_format": {
         "source.organizeImports": true
       },
@@ -190,10 +205,11 @@
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     },
+
     "JavaScript": {
+      "tab_size": 2,
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       },
@@ -205,10 +221,22 @@
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     },
+
+    "Make": {
+      "tab_size": 4
+    },
+
+    "Markdown": {
+      "remove_trailing_whitespace_on_save": true,
+      "format_on_save": "prettier"
+    },
+
     "Python": {
+      "tab_size": 4,
+      "language_servers": ["pyright"],
+      "format_on_save": "on",
       "code_actions_on_format": {
         "source.organizeImports": true
       },
@@ -224,23 +252,29 @@
             "name": "ruff"
           }
         }
-      ],
-      "language_servers": ["ruff"],
-      "tab_size": 4
+      ]
     },
+
+    "SQL": {
+      "tab_size": 2
+    },
+
     "Rust": {
       "tab_size": 4,
       "language_servers": ["rust.analyzer"]
     },
+
     "Svelte": {
+      "tab_size": 2,
       "formatter": {
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     },
+
     "TypeScript": {
+      "tab_size": 2,
       "code_actions_on_format": {
         "source.organizeImports": true
       },
@@ -251,10 +285,11 @@
       },
       "prettier": {
         "allowed": false
-      },
-      "tab_size": 2
+      }
     },
+
     "TSX": {
+      "tab_size": 2,
       "code_actions_on_format": {
         "source.organizeImports": true
       },
@@ -262,18 +297,34 @@
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     },
+
     "Vue.js": {
+      "tab_size": 2,
       "formatter": {
         "language_server": {
           "name": "biome"
         }
-      },
-      "tab_size": 2
+      }
     }
   },
+
+  "yaml": {
+    "completion": true,
+    "format": {
+      "enable": true,
+      "singleQuote": false,
+      "bracketSpacing": true
+    },
+    "hover": "enable",
+    "schemaStore": {
+      "enable": true,
+      "url": "https://www.schemastore.org/api/json/catalog.json"
+    },
+    "validate": true
+  },
+
   // ####################################################
   // LSP ################################################
   // ####################################################
@@ -284,12 +335,14 @@
         "require_config_file": true
       }
     },
+
     "clangd": {
       "binary": {
         "path": "/usr/bin/clangd",
         "args": []
       }
     },
+
     "eslint": {
       "settings": {
         "codeActionOnSave": {
@@ -297,16 +350,30 @@
         }
       }
     },
+
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace"
+          // "typeCheckingMode": "strict"
+        },
+        "python": {
+          "pythonPath": "~/.pyenv/shims/python"
+        }
+      }
+    },
+
     "ruff": {
       "initialization_options": {
         "settings": {
-          "lineLength": 80,
+          "lineLength": 72,
           "lint": {
             "extendSelect": ["I"]
           }
         }
       }
     },
+
     "rust.analyzer": {
       "initialization_options": {
         "rust": {
@@ -331,6 +398,7 @@
         }
       }
     },
+
     "svelte-language-server": {
       "initialization_options": {
         "configuration": {
@@ -339,11 +407,13 @@
         }
       }
     },
+
     "tailwindcss-language-server": {
       "settings": {
         "classAttributes": ["class", "className", "ngClass", "styles"]
       }
     },
+
     "terraform-ls": {
       "initialization_options": {
         "experimentalFeatures": {
@@ -351,6 +421,7 @@
         }
       }
     },
+
     "vtsls": {
       "initialization_options": {
         "preferences": {
@@ -375,21 +446,26 @@
         }
       }
     },
-    "yaml": {
-      "completion": true,
-      "format": {
-        "enable": true,
-        "singleQuote": false,
-        "bracketSpacing": true
-      },
-      "hover": "enable",
-      "schemaStore": {
-        "enable": true,
-        "url": "https://www.schemastore.org/api/json/catalog.json"
-      },
-      "validate": true
+
+    "yaml-language-server": {
+      "initialization_options": {
+        "yaml": {
+          "keyOrdering": false,
+          "format": {
+            "singleQuote": false
+          },
+          "schemaStore": {
+            "enable": true
+          },
+          "schemas": {
+            "http://json.schemastore.org/composer": ["/*"],
+            "../relative/path/schema.json": ["/config*.yaml"]
+          }
+        }
+      }
     }
   },
+
   // ####################################################
   // MISC ###############################################
   // ####################################################
@@ -397,6 +473,7 @@
     "mute_on_join": true,
     "share_on_join": false
   },
+
   "journal": {
     "path": "~/.config/zed",
     "hour_format": "hour24"
